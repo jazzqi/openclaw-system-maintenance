@@ -143,3 +143,102 @@ if (require.main === module) {
 }
 
 module.exports = SystemMaintenanceSkill;
+
+  /**
+   * 安装统一维护系统
+   */
+  installUnifiedSystem() {
+    console.log('🚀 安装统一维护系统...');
+    
+    const installScript = path.join(__dirname, 'maintenance-system', 'scripts', 'install-maintenance-system.sh');
+    
+    if (!fs.existsSync(installScript)) {
+      console.log('❌ 安装脚本不存在，请先更新技能');
+      return;
+    }
+    
+    try {
+      execSync(`bash "${installScript}"`, { stdio: 'inherit' });
+      console.log('✅ 统一维护系统安装完成');
+    } catch (error) {
+      console.error('❌ 安装失败:', error.message);
+    }
+  }
+
+  /**
+   * 检查统一系统状态
+   */
+  checkUnifiedSystem() {
+    console.log('🔍 检查统一维护系统状态...');
+    
+    const maintenanceDir = path.join(__dirname, 'maintenance-system');
+    
+    if (!fs.existsSync(maintenanceDir)) {
+      console.log('❌ 统一系统未安装');
+      return;
+    }
+    
+    // 检查目录结构
+    const dirs = fs.readdirSync(maintenanceDir);
+    console.log('📁 系统目录:');
+    dirs.forEach(dir => {
+      const stat = fs.statSync(path.join(maintenanceDir, dir));
+      console.log(`  ${dir} (${stat.isDirectory() ? '目录' : '文件'})`);
+    });
+    
+    // 检查定时任务
+    try {
+      const cronOutput = execSync('crontab -l | grep -i "openclaw.*maintenance"', { encoding: 'utf8' });
+      console.log('⏰ 定时任务:');
+      console.log(cronOutput);
+    } catch {
+      console.log('⏰ 定时任务: 未找到');
+    }
+  }
+}
+
+// 更新命令行接口
+if (require.main === module) {
+  const skill = new SystemMaintenanceSkill();
+  const command = process.argv[2];
+
+  switch (command) {
+    case 'daily':
+      skill.runDailyMaintenance();
+      break;
+    case 'quick':
+      skill.runQuickCleanup();
+      break;
+    case 'status':
+      skill.checkSystemStatus();
+      break;
+    case 'install-cron':
+      skill.installCronJob();
+      break;
+    case 'install-system':  // 新增
+      skill.installUnifiedSystem();
+      break;
+    case 'check-system':    // 新增
+      skill.checkUnifiedSystem();
+      break;
+    default:
+      console.log(`
+系统清理与优化维护技能 v1.1.0
+
+用法:
+  node entry.js [command]
+
+命令:
+  daily          运行日常维护
+  quick          运行快速清理
+  status         检查系统状态
+  install-cron   安装定时任务 (旧版)
+  install-system 安装统一维护系统 (新版)
+  check-system   检查统一系统状态
+
+示例:
+  node entry.js install-system  # 安装统一维护系统
+  node entry.js check-system    # 检查系统状态
+      `);
+  }
+}

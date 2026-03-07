@@ -1,19 +1,22 @@
 {
   "name": "openclaw-skill-system-maintenance",
-  "version": "1.0.0",
-  "description": "OpenClaw 系统清理与优化维护技能",
+  "version": "1.1.0",
+  "description": "OpenClaw System Maintenance Skill v2 - Unified maintenance system with real-time monitoring, daily cleanup, and log management",
   "main": "entry.js",
   "scripts": {
     "test": "node entry.js status",
     "maintenance": "node entry.js daily",
-    "clean": "node entry.js quick"
+    "clean": "node entry.js quick",
+    "install-system": "bash maintenance-system/scripts/install-maintenance-system.sh"
   },
   "keywords": [
     "openclaw",
     "maintenance",
     "system",
     "cleanup",
-    "optimization"
+    "optimization",
+    "monitoring",
+    "automation"
   ],
   "author": "Claw <assistant@openclaw.ai>",
   "license": "MIT",
@@ -24,8 +27,7 @@
   "files": [
     "SKILL.md",
     "entry.js",
-    "scripts/",
-    "docs/",
+    "maintenance-system/",
     "examples/"
   ],
   "engines": {

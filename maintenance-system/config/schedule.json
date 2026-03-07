@@ -1,0 +1,40 @@
+{
+  "maintenance_schedule": {
+    "real_time_monitor": {
+      "enabled": true,
+      "schedule": "*/5 * * * *",
+      "script": "real-time-monitor.sh",
+      "description": "5分钟实时监控 - 进程检查和自动恢复"
+    },
+    "daily_maintenance": {
+      "enabled": true,
+      "schedule": "30 3 * * *",
+      "script": "daily-maintenance.sh",
+      "description": "日常维护 - 综合清理和健康检查"
+    },
+    "weekly_optimization": {
+      "enabled": true,
+      "schedule": "0 3 * * 0",
+      "script": "weekly-optimization.sh",
+      "description": "每周优化 - 深度系统分析和优化"
+    },
+    "log_management": {
+      "enabled": true,
+      "schedule": "0 2 * * *",
+      "script": "log-management.sh",
+      "description": "日志管理 - 清理旧日志和轮转"
+    }
+  },
+  "log_settings": {
+    "retention_days": 7,
+    "max_log_size_mb": 10,
+    "cleanup_days": 3,
+    "compress_after_days": 14
+  },
+  "monitor_settings": {
+    "gateway_check_interval": 300,
+    "max_restart_attempts": 3,
+    "alert_on_cpu": 80,
+    "alert_on_memory_mb": 1000
+  }
+}
