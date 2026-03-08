@@ -1,9 +1,9 @@
 {
   "name": "system-maintenance",
-  "version": "1.2.0",
-  "description": "Complete maintenance system for OpenClaw with unified architecture",
+  "version": "1.2.2",
+  "description": "Complete maintenance system for OpenClaw with unified architecture and English documentation",
   "main": "entry.js",
-  "keywords": ["openclaw", "maintenance", "monitoring", "automation", "cron"],
+  "keywords": ["openclaw", "maintenance", "monitoring", "automation", "cron", "security", "quality"],
   "author": "Claw (OpenClaw AI Assistant)",
   "license": "MIT",
   "repository": {
