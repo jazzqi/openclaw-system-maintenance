@@ -19,6 +19,8 @@ The **System Maintenance Skill** provides a complete, unified maintenance soluti
 - 📊 **Professional reporting** - Weekly optimization reports
 - 🔄 **Safe migration** - Complete backup and rollback system
 - 🍎 **macOS compatible** - Tested and optimized for macOS
+- 🌐 **Cross-platform design** - Architecture预留 for Linux and Windows
+- 🏗️ **Modular architecture** - Easy to extend for other platforms
 
 ## 🚀 Features
 
@@ -47,21 +49,28 @@ The **System Maintenance Skill** provides a complete, unified maintenance soluti
 ```
 system-maintenance/
 ├── 📄 README.md                    # This file
-├── 📄 SKILL.md                     # Skill documentation
-├── 📄 package.json                 # NPM configuration (v1.2.0)
+├── 📄 SKILL.md                     # Skill documentation (English)
+├── 📄 SKILL.md.zh-CN.bak           # Chinese documentation backup
+├── 📄 package.json                 # NPM configuration (v1.3.0)
 ├── 📄 entry.js                     # Skill entry point
 ├── 📄 .gitignore                   # Git ignore rules
+├── 📄 pre-commit-checklist.md      # Pre-commit checklist guidelines
 ├── 🛠️  scripts/                    # Core maintenance scripts
 │   ├── weekly-optimization.sh      # Weekly deep optimization
 │   ├── real-time-monitor.sh        # Real-time monitoring (every 5 min)
 │   ├── log-management.sh           # Log cleanup and rotation
 │   ├── daily-maintenance.sh        # Daily maintenance (3:30 AM)
-│   └── install-maintenance-system.sh # Installation tool
+│   ├── install-maintenance-system.sh # Installation tool
+│   └── check-before-commit.sh      # Pre-commit quality check
 ├── 📚  examples/                   # Examples and templates
 │   ├── setup-guide.md              # Quick setup guide
 │   ├── migration-guide.md          # Safe migration guide
 │   ├── final-status-template.md    # Status report template
 │   └── optimization-suggestions.md # Optimization suggestions
+├── 📝  docs/                       # Additional documentation
+│   ├── architecture.md             # System architecture
+│   ├── cross-platform-architecture.md # Cross-platform design
+│   └── PUBLISH_GUIDE.md            # Publication guide
 └── 📁 backup-v1.0.0/              # Version 1.0.0 backup
 ```
 
@@ -318,6 +327,37 @@ bash scripts/install-maintenance-system.sh --test
 | **Reporting** | No reports | Professional weekly reports | **New feature** |
 | **Safety** | Minimal backup | Complete backup + rollback | **+300%** |
 | **Maintainability** | Hard to update | Modular, easy to extend | **+150%** |
+| **Platform Support** | macOS only | Cross-platform design | **New capability** |
+
+## 🌐 Cross-Platform Compatibility
+
+### Platform Support Matrix
+| Platform | Status | Notes |
+|----------|--------|-------|
+| **macOS** | ✅ **Fully Supported** | Primary platform, thoroughly tested |
+| **Linux** | 🔧 **Architecture Ready** | Compatible design, needs platform adapters |
+| **Windows** | 🔄 **Designed For** | Architecture预留 for future adaptation |
+
+### Cross-Platform Features
+- **Modular Design**: Platform-specific code in separate modules
+- **Abstraction Layers**: Common interfaces for platform operations  
+- **Configuration-Driven**: Platform behavior through config files
+- **Documentation**: Complete cross-platform architecture guide
+- **Community Extensible**: Easy to add support for new platforms
+
+### Getting Started on Different Platforms
+- **macOS**: Follow standard installation instructions
+- **Linux**: Check platform-specific notes in documentation
+- **Windows**: Review adaptation guidelines for Windows compatibility
+
+### Platform-Specific Considerations
+| Platform | Process Detection | Service Control | Scheduling | Log Paths |
+|----------|-------------------|-----------------|------------|-----------|
+| **macOS** | `ps aux \| grep` | `launchctl` | `crontab` | `/tmp/` |
+| **Linux** | `pgrep` / `ps` | `systemctl` | `crontab` | `/var/log/` |
+| **Windows** | `tasklist` | `sc` / `net` | Task Scheduler | `%TEMP%` |
+
+See [docs/cross-platform-architecture.md](docs/cross-platform-architecture.md) for detailed architecture design.
 
 ## 🔍 Troubleshooting
 

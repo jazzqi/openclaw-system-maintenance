@@ -264,11 +264,23 @@ git commit -m "Your commit message"
 - **memory-core**: Memory management integration
 - **smart-memory-system**: Advanced memory features
 
+### Platform-Specific Skills
+- **macOS Skills**: Fully compatible with all macOS-specific OpenClaw skills
+- **Linux Skills**: Compatible with Linux-oriented skills through abstraction layer
+- **Windows Skills**: Architecture预留 for future Windows skill integration
+
 ### OpenClaw Integration
 - **Gateway Monitoring**: Direct integration with OpenClaw Gateway
 - **Cron Management**: Compatible with OpenClaw cron system
 - **Log Management**: Works with OpenClaw log structure
 - **Configuration**: Follows OpenClaw configuration standards
+
+### Cross-Platform Compatibility
+- **Primary Platform**: macOS (fully tested and optimized)
+- **Linux Support**: Designed with Linux compatibility in mind
+- **Windows Support**: Architecture预留 for future Windows adaptation
+- **Modular Design**: Platform-specific code can be added by community
+- **Documentation**: Includes cross-platform architecture guide
 
 ## 📝 Usage Examples
 
@@ -376,6 +388,40 @@ bash scripts/install-maintenance-system.sh --test
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## 🌐 Cross-Platform Support
+
+### Current Platform Support
+- **✅ macOS**: Primary platform, fully tested and optimized
+- **🔧 Linux**: Compatible architecture, ready for community implementation
+- **🔄 Windows**: Architecture预留, requires platform-specific adapters
+
+### Cross-Platform Architecture
+The skill is designed with cross-platform compatibility in mind:
+
+1. **Modular Design**: Platform-specific code can be added as separate modules
+2. **Abstraction Layers**: Common interfaces for platform-specific operations
+3. **Configuration-Driven**: Platform behavior configurable through settings
+4. **Documentation**: Complete cross-platform architecture guide available
+
+### Platform-Specific Features
+| Platform | Process Detection | Service Control | Scheduling | Log Management |
+|----------|-------------------|-----------------|------------|----------------|
+| **macOS** | ✅ `ps aux \| grep` | ✅ `launchctl` | ✅ `crontab` | ✅ `/tmp/` |
+| **Linux** | ✅ `pgrep` / `ps` | ✅ `systemctl` | ✅ `crontab` | ✅ `/var/log/` |
+| **Windows** | ⚠️ `tasklist` | ⚠️ `sc` / `net` | ⚠️ Task Scheduler | ⚠️ `%TEMP%` |
+
+### Getting Started on Different Platforms
+- **macOS**: Follow standard installation (fully supported)
+- **Linux**: Check `docs/linux-setup.md` for platform-specific instructions
+- **Windows**: Review `docs/windows-setup.md` for adaptation guidelines
+
+### Contributing Platform Support
+Community contributions are welcome for adding support to new platforms:
+1. Review `docs/cross-platform-architecture.md`
+2. Create platform adapter modules
+3. Add platform-specific configuration
+4. Submit pull request with tests
+
 ## 🔗 Links
 
 - **GitHub Repository**: https://github.com/jazzqi/openclaw-system-maintenance
@@ -383,6 +429,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **OpenClaw Community**: https://discord.com/invite/clawd
 - **Issue Tracker**: https://github.com/jazzqi/openclaw-system-maintenance/issues
 - **Documentation**: [README.md](README.md) and [examples/](examples/)
+- **Cross-Platform Docs**: [docs/cross-platform-architecture.md](docs/cross-platform-architecture.md)
 
 ## 🙏 Acknowledgments
 
