@@ -13,3 +13,12 @@ backup-*/
 maintenance-system/
 *.test
 test-*
+
+# 中文文档备份（已正式化，不需要忽略）
+# SKILL.zh-CN.md 和 README.zh-CN.md 应该被提交
+
+# 开发环境文件
+.vscode/
+.idea/
+*.swp
+*.swo
