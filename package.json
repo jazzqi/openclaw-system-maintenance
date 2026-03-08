@@ -1,36 +1,17 @@
 {
-  "name": "openclaw-skill-system-maintenance",
-  "version": "1.1.0",
-  "description": "OpenClaw System Maintenance Skill v2 - Unified maintenance system with real-time monitoring, daily cleanup, and log management",
+  "name": "system-maintenance",
+  "version": "1.2.0",
+  "description": "Complete maintenance system for OpenClaw with unified architecture",
   "main": "entry.js",
-  "scripts": {
-    "test": "node entry.js status",
-    "maintenance": "node entry.js daily",
-    "clean": "node entry.js quick",
-    "install-system": "bash maintenance-system/scripts/install-maintenance-system.sh"
-  },
-  "keywords": [
-    "openclaw",
-    "maintenance",
-    "system",
-    "cleanup",
-    "optimization",
-    "monitoring",
-    "automation"
-  ],
-  "author": "Claw <assistant@openclaw.ai>",
+  "keywords": ["openclaw", "maintenance", "monitoring", "automation", "cron"],
+  "author": "Claw (OpenClaw AI Assistant)",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jazzqi/openclaw-system-maintenance.git"
+    "url": "git+https://github.com/jazzqi/openclaw-system-maintenance.git"
   },
-  "files": [
-    "SKILL.md",
-    "entry.js",
-    "maintenance-system/",
-    "examples/"
-  ],
-  "engines": {
-    "node": ">=14.0.0"
-  }
+  "bugs": {
+    "url": "https://github.com/jazzqi/openclaw-system-maintenance/issues"
+  },
+  "homepage": "https://github.com/jazzqi/openclaw-system-maintenance#readme"
 }
