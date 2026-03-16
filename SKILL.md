@@ -453,3 +453,6 @@ Community contributions are welcome for adding support to new platforms:
 
 ---
 *Note: Chinese documentation is available as backup: `SKILL.md.zh-CN.bak`*
+## 架构最佳实践
+- **单点来源原则**：所有维护脚本位于  目录。
+- **符号链接部署**：运行时目录  软链接至此，确保 Cron 任务自动同步 Git 版本。
