@@ -456,3 +456,8 @@ Community contributions are welcome for adding support to new platforms:
 ## 架构最佳实践
 - **单点来源原则**：所有维护脚本位于  目录。
 - **符号链接部署**：运行时目录  软链接至此，确保 Cron 任务自动同步 Git 版本。
+
+## 文件系统治理规则
+- **遵守 [FS Governance 标准](./docs/FILE_SYSTEM_GOVERNANCE.md)**
+- 严禁在根目录新增非分区路径
+- 运行维护任务前，需确认是否触碰核心资产目录
